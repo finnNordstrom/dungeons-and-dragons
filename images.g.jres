@@ -1,0 +1,12 @@
+{
+    "image1": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwdwAAdwAAAHB3AABwBwAA7u4AAHd3AODu7v5w9/cH7u7u/nB393fu7u4OcHf3d+7u7g5w9/cH7u7u/gB3dwDg7u7+AHAHAADu7gAAdwAAAHB3AAAAAAAAcHcAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "goblin"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}
