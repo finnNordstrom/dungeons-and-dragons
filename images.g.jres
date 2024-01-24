@@ -4,6 +4,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "goblin"
     },
+    "jSICIMU/-t~LSq_?LLkH": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAPD/AAAAAPD//+8PAAAA//7+RATwDwDv/v5E9P//8O7+/kTk/v/w7u/+RBThD/Du7/9EFOEP8P7uT//U3w/w7+5PRNTf//Du7k9E1N//AO/u/kTf3/8A8O/+9NDfDwAA8P8P0N8AAAAAAAAADQAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Rogue"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

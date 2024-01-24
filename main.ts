@@ -1,46 +1,67 @@
-function dungeon () {
-    tiles.setCurrentTilemap(tilemap`level1`)
+function dungeon (num: number) {
+    if (num == 1) {
+        tiles.setCurrentTilemap(tilemap`level1`)
+    } else if (num == 2) {
+        tiles.setCurrentTilemap(tilemap`level4`)
+        Rogue.setPosition(0, 99)
+    } else if (num == 0) {
+    	
+    } else if (num == 0) {
+    	
+    } else if (num == 0) {
+    	
+    } else if (num == 0) {
+    	
+    } else if (num == 0) {
+    	
+    } else if (num == 0) {
+    	
+    } else if (num == 0) {
+    	
+    } else if (num == 0) {
+    	
+    } else {
+    	
+    }
+}
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeLifeBy(dice(1))
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile4`, function (sprite, location) {
+    floor += 1
+    dungeon(floor)
+})
+function hasNextFloor () {
+    let maxFloor = 0
+    let curentfloor = 0
+    return curentfloor != maxFloor
 }
 function goblin2 () {
     goblin = sprites.create(assets.image`goblin`, SpriteKind.Enemy)
     goblin.setPosition(129, 87)
-    info.setLife(dice(7))
+    info.setLife(7)
 }
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
-    info.changeLifeBy(-1 * dice(20))
+    info.changeLifeBy(-1 * dice(10))
 })
 function dice (num: number) {
     return randint(1, num)
 }
 function player2 () {
-    Rogue = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . f f f f f f . . . . . 
-        . . . f f e e e e f e f . . . . 
-        . . f f e e e e f e e e f . . . 
-        . . f e e e f f e e e e f . . . 
-        . . f f f f e e e e e e e f . . 
-        . . f e e e e f f f f e e f . . 
-        . f f f f f f f 4 4 4 f f f . . 
-        . f f 4 4 4 4 4 f 4 4 4 4 f . . 
-        . f e 4 4 4 4 4 f 4 4 4 f . . . 
-        . . f 4 4 4 4 4 4 4 4 f . . . . 
-        . . . . f e 1 1 d d d d d d . . 
-        . . . . f e 1 1 f f f f f f d . 
-        . . . f f f e e d d d d d d . . 
-        . . . f f f f f f f f f f . . . 
-        . . . . f f . . . f f f . . . . 
-        `, SpriteKind.Player)
+    Rogue = sprites.create(assets.image`Rogue`, SpriteKind.Player)
     info.setLife(dice(20))
     scene.cameraFollowSprite(Rogue)
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    sprites.destroy(otherSprite, effects.disintegrate, 5000)
+    sprites.destroy(otherSprite, effects.none, dice(100))
 })
 let goblin: Sprite = null
 let Rogue: Sprite = null
+let floor = 0
+floor = 1
 goblin2()
 player2()
+dungeon(floor)
 scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -163,5 +184,4 @@ scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     `)
-dungeon()
 controller.moveSprite(Rogue)

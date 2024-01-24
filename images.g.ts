@@ -22,6 +22,25 @@ namespace myImages {
 . . . . . e e e e e e . . . . . 
 . . . . . f f . . f f . . . . . 
 `;
+            case "jSICIMU/-t~LSq_?LLkH":
+            case "Rogue":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . f f f f f f . . . . . 
+. . . f f e e e e f e f . . . . 
+. . f f e e e e f e e e f . . . 
+. . f e e e f f e e e e f . . . 
+. . f f f f e e e e e e e f . . 
+. . f e e e e f f f f e e f . . 
+. f f f f f f f 4 4 4 f f f . . 
+. f f 4 4 4 4 4 f 4 4 4 4 f . . 
+. f e 4 4 4 4 4 f 4 4 4 f . . . 
+. . f 4 4 4 4 4 4 4 4 f . . . . 
+. . . . f e 1 1 d d d d d d . . 
+. . . . f e 1 1 f f f f f f d . 
+. . . f f f e e d d d d d d . . 
+. . . f f f f f f f f f f . . . 
+. . . . f f . . . f f f . . . . 
+`;
         }
         return null;
     })
