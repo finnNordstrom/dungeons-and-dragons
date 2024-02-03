@@ -4,8 +4,9 @@ function dungeon (num: number) {
     } else if (num == 2) {
         tiles.setCurrentTilemap(tilemap`level4`)
         Rogue.setPosition(0, 99)
-    } else if (num == 0) {
-    	
+    } else if (num == 3) {
+        tiles.setCurrentTilemap(tilemap`level0`)
+        Rogue.setPosition(0, 99)
     } else if (num == 0) {
     	
     } else if (num == 0) {
@@ -24,11 +25,15 @@ function dungeon (num: number) {
     	
     }
 }
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, location) {
+    floor += 1
+    dungeon(floor)
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeLifeBy(dice(1))
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile4`, function (sprite, location) {
-    floor += 1
+scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles10, function (sprite, location) {
+    floor += 2
     dungeon(floor)
 })
 function hasNextFloor () {
@@ -52,6 +57,10 @@ function player2 () {
     info.setLife(dice(20))
     scene.cameraFollowSprite(Rogue)
 }
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, location) {
+    floor += 1
+    dungeon(floor)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprites.destroy(otherSprite, effects.none, dice(100))
 })
